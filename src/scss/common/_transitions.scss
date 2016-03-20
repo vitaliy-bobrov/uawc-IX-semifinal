@@ -1,0 +1,14 @@
+a {
+  transition: all .45s linear;
+
+  &:before,
+  &:after {
+    transition: all .45s linear;
+  }
+}
+
+input,
+button,
+textarea {
+  transition: all .45s linear;
+}

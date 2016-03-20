@@ -1,0 +1,25 @@
+{
+	"source": "./src",
+	"destination": "./dist",
+	"html": {
+		"src": "./src/**/*.html"
+	},
+	"scripts": {
+		"src": "./src/js/**/*.js",
+		"dist": "./dist/js"
+	},
+	"styles": {
+		"src": "./src/scss/**/*.{scss,sass}",
+		"dist": "./dist/css"
+	},
+	"images": {
+		"src": {
+			"all": [
+				"./src/images/**/*.{jpg,jpeg,png,gif,svg}",
+				"./src/icons/**/*.{jpg,jpeg,png,gif,svg}"
+			],
+			"towebp": "./src/images/**/*.{jpg,jpeg,png,gif}"
+		},
+		"dist": "./dist/images"
+	}
+}
