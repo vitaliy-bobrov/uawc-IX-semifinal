@@ -1,0 +1,7 @@
+@mixin animation-sequense($count, $duration, $offset-time, $type: 'animation') {
+  @for $i from 2 through $count {
+    &:nth-of-type(#{$i}) {
+      #{$type}-delay: $duration * ($i - 1) + $offset-time;
+    }
+  }
+}

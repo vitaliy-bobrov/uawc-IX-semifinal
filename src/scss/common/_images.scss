@@ -1,5 +1,12 @@
 img,
-picture {
+picture,
+svg {
   max-width: 100%;
   height: auto;
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  img[src*=".svg"] {
+    width: 100%;
+  }
 }

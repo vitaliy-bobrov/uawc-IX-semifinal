@@ -13,4 +13,5 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: rgba($white, .05);
   background-color: $white;
+  scroll-behavior: smooth;
 }

@@ -3,13 +3,29 @@
 @import 'configuration/breakpoints';
 @import 'configuration/fonts';
 @import 'configuration/z-index';
+@import 'configuration/units';
+
+// Mixins.
+@import 'abstractions/mixins/clearfix';
+@import 'abstractions/mixins/breakpoint';
+@import 'abstractions/mixins/animation-sequense';
+
+// Normalize.
+@import '../libraries/normalize-scss/normalize.scss';
 
 // Common.
 @import 'common/sizing';
 @import 'common/base';
+@import 'common/touch';
 @import 'common/images';
 @import 'common/transitions';
 @import 'common/outline';
+@import 'common/typography';
+
+// Placeholders.
+@import 'abstractions/placeholders/visually-hidden';
+@import 'abstractions/placeholders/picture-inside';
+@import 'abstractions/placeholders/v-align';
 
 // Animations.
 @import 'abstractions/animations';
