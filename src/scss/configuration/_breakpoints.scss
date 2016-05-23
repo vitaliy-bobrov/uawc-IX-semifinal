@@ -1,11 +1,10 @@
 $mq-breakpoints: (
-	mobile: 320px,
-	fablet: 360px,
-	mobile-land: 480px,
-	tablet: 768px,
-	tablet-land: 1024px,
-	desktop: 1140px,
-	large-desktop: 1366px,
+  mobile:         20em,    // 320px
+  fablet:         22.5em,  // 360px
+  mobile-land:    30em,    // 480px
+  tablet:         48em,    // 768px
+  tablet-land:    64em,    // 1024px
+  desktop:        75em,    // 1200px
 );
 
 $mq-media: 'screen';

@@ -1,0 +1,23 @@
+.page-title {
+  margin: 0 0 24px;
+  font-family: $farray;
+  font-size: 32px;
+  line-height: 28px;
+  font-weight: 400;
+
+  @include bp(fablet) {
+    font-size: 40px;
+    line-height: 36px;
+  }
+
+  @include bp(tablet) {
+    font-size: 56px;
+    line-height: 52px;
+  }
+
+  @include bp(tablet-land) {
+    margin-bottom: 32px;
+    font-size: 72px;
+    line-height: 66px;
+  }
+}

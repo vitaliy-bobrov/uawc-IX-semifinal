@@ -1,0 +1,83 @@
+.header {
+  position: relative;
+  overflow: hidden;
+  @extend %picture-inside;
+
+  &__background {
+    position: relative;
+    z-index: $under-content;
+  }
+
+  &__content-wrapper {
+    width: 90%;
+    padding: 24px;
+    position: absolute;
+    top: 28%;
+    left: 5%;
+    border-top: 2px solid $boulder;
+    border-left: 2px solid $boulder;
+    border-right: 2px solid $boulder;
+
+    @include bp(mobile-land) {
+      width: 80%;
+      left:10%;
+      padding: 40px 24px;
+    }
+
+    @include bp(tablet) {
+      width: 70%;
+      padding: 80px 46px;
+      left: 15%;
+    }
+
+    @include bp(tablet-land) {
+      width: 61%;
+      padding: 143px 65px 143px 58px;
+      top: 30%;
+      left: 5%;
+    }
+
+    @include bp(desktop) {
+      width: 55.5%; // 666px / 1200px
+      top: 33.45%; // 273px / 816px
+      left: 9.25%; // 111px / 1200px
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      height: 2px;
+      position: absolute;
+      bottom: 0;
+      background-color: $boulder;
+    }
+
+    &:before {
+      width: 30px;
+      left: 0;
+
+      @include bp(tablet) {
+        width: calc(18% - 90px); // 30px / 666px
+      }
+    }
+
+    &:after {
+      width: calc(95.5% - 90px); // 30px / 666px
+      right: 0;
+    }
+  }
+
+  &__title,
+  &__text {
+    color: $tile;
+  }
+
+  &__title {
+    @include textGlitch('glitch-title', 10, $tile, $sand, 540, 68);
+  }
+
+  &__text {
+    margin: 0;
+  }
+}

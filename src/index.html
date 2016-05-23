@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui, shrink-to-fit=no">
-    <title></title>
+    <title>Philosophy | UAWC IX</title>
 
     <!-- Disable tap highlight on IE -->
     <meta name="msapplication-tap-highlight" content="no">
@@ -26,30 +26,583 @@
 
     <!-- Tile icon for Win8 (144x144 + tile color) -->
     <meta name="msapplication-TileImage" content="icons/ms-touch-icon-144x144-precomposed.png">
-    <meta name="msapplication-TileColor" content="#1a2631">
+    <meta name="msapplication-TileColor" content="#f0d2b0">
 
     <!-- Color the status bar on mobile devices -->
-    <meta name="theme-color" content="#1a2631">
+    <meta name="theme-color" content="#f0d2b0">
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/main.css">
   </head>
-  <body>
+  <body class="preloader">
+    <!-- Preloader script -->
+    <script src="js/preloader.min.js"></script>
+    <!-- Preloader spinner -->
+    <div class="preloader__spinner">
+      <div class="preloader__ball"></div>
+      <div class="preloader__ball"></div>
+      <div class="preloader__ball"></div>
+      <div class="preloader__ball"></div>
+      <div class="preloader__ball"></div>
+      <div class="preloader__ball"></div>
+      <div class="preloader__ball"></div>
+      <div class="preloader__ball"></div>
+      <div class="preloader__ball"></div>
+    </div>
     <!-- Header -->
-    <header role="banner">
+    <header class="header container" role="banner">
+      <picture class="header__background js-parallax parallax">
+        <source media="(min-width: 1200px)"
+                srcset="images/header-bg-desktop.webp 1x, images/header-bg-desktop@2x.webp 2x"
+                type="image/webp">
+        <source media="(min-width: 1200px)"
+                srcset="images/header-bg-desktop.jpg 1x, images/header-bg-desktop@2x.jpg 2x">
+        <source media="(min-width: 1024px)"
+                srcset="images/header-bg-tablet-land.webp 1x, images/header-bg-tablet-land@2x.webp 2x"
+                type="image/webp">
+        <source media="(min-width: 1024px)"
+                srcset="images/header-bg-tablet-land.jpg 1x, images/header-bg-tablet-land@2x.jpg 2x">
+        <source media="(min-width: 768px)"
+                srcset="images/header-bg-tablet.webp 1x, images/header-bg-tablet@2x.webp 2x"
+                type="image/webp">
+        <source media="(min-width: 768px)"
+                srcset="images/header-bg-tablet.jpg 1x, images/header-bg-tablet@2x.jpg 2x">
+        <source media="(min-width: 360px)"
+                srcset="images/header-bg-fablet.webp 1x, images/header-bg-fablet@2x.webp 2x"
+                type="image/webp">
+        <source media="(min-width: 360px)"
+                srcset="images/header-bg-fablet.jpg 1x, images/header-bg-fablet@2x.jpg 2x">
+        <source srcset="images/header-bg-mobile.webp 1x, images/header-bg-mobile@2x.webp 2x"
+                type="image/webp">
+        <source srcset="images/header-bg-mobile.jpg 1x, images/header-bg-mobile@2x.jpg 2x">
+        <img src="images/header-bg-desktop.jpg" alt="Philosophy">
+      </picture>
+      <!-- Nav toggle -->
+      <a href="#"
+         id="menu-button"
+         class="menu-toggle js-menu-toggle"
+         role="button"
+         aria-label="Menu"
+         aria-expanded="false"
+         aria-controls="menu">
+        <span class="menu-toggle__line"></span>
+        <span class="menu-toggle__line"></span>
+        <span class="menu-toggle__line"></span>
+      </a>
 
+      <nav class="menu js-menu">
+        <ul class="menu__list">
+          <li class="menu__item">
+            <a href="#basics" class="menu__link">
+              <span class="menu__text-wrap">Basics</span>
+              </a>
+          </li>
+          <li class="menu__item">
+            <a href="#blouses-n-shirts" class="menu__link">
+              <span class="menu__text-wrap">Blouses & Shirts</span>
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="#t-shorts-n-tops" class="menu__link">
+              <span class="menu__text-wrap">T-Shorts & Tops</span>
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="#jacket" class="menu__link">
+              <span class="menu__text-wrap">Jacket</span>
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="#trousers-n-jeans" class="menu__link">
+              <span class="menu__text-wrap">Trousers & Jeans</span>
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="#dresses" class="menu__link">
+              <span class="menu__text-wrap">Dresses</span>
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="#sweatshirts" class="menu__link">
+              <span class="menu__text-wrap">Sweatshirts</span>
+            </a>
+          </li>
+          <li class="menu__item">
+            <a href="#coats-n-parkas" class="menu__link">
+              <span class="menu__text-wrap">Coats & Parkas</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header__content-wrapper">
+        <h1 class="header__title page-title" data-text="Philosophy">Philosophy</h1>
+        <p class="header__text">New season fashion is here so we bet you’ve been busy browsing your favourite mags and blogs for style inspiration. Our new and improved yourself confidence. In The Press category, powered by Endource.</p>
+
+        <a href="#main" class="skip-link">Skip to main content</a>
+      </div>
     </header>
-    <!-- Header -->
-    <main role="main">
+    <!-- Collection -->
+    <main id="main" class="container" role="main">
+      <section class="section collection">
+        <h2 class="section__title section__title_sticky collection__title js-char-wrap">Collection</h2>
+        <!-- Collection story -->
+        <article class="collection__story collection-story">
+          <picture class="collection-story__image">
+            <source media="(min-width: 1200px)"
+                    srcset="images/tender-desktop.webp 1x, images/tender-desktop@2x.webp 2x"
+                    type="image/webp">
+            <source media="(min-width: 1200px)"
+                    srcset="images/tender-desktop.jpg 1x, images/tender-desktop@2x.jpg 2x">
+            <source media="(min-width: 1024px)"
+                    srcset="images/tender-tablet-land.webp 1x, images/tender-tablet-land@2x.webp 2x"
+                    type="image/webp">
+            <source media="(min-width: 1024px)"
+                    srcset="images/tender-tablet-land.jpg 1x, images/tender-tablet-land@2x.jpg 2x">
+            <source media="(min-width: 768px)"
+                    srcset="images/tender-tablet.webp 1x, images/tender-tablet@2x.webp 2x"
+                    type="image/webp">
+            <source media="(min-width: 768px)"
+                    srcset="images/tender-tablet.jpg 1x, images/tender-tablet@2x.jpg 2x">
+            <source media="(min-width: 360px)"
+                    srcset="images/tender-fablet.webp 1x, images/tender-fablet@2x.webp 2x"
+                    type="image/webp">
+            <source media="(min-width: 360px)"
+                    srcset="images/tender-fablet.jpg 1x, images/tender-fablet@2x.jpg 2x">
+            <source srcset="images/tender-mobile.webp 1x, images/tender-mobile@2x.webp 2x"
+                    type="image/webp">
+            <source srcset="images/tender-mobile.jpg 1x, images/tender-mobile@2x.jpg 2x">
+            <img src="images/tender-desktop.jpg" alt="Tender Girls Photo">
+          </picture>
 
+          <div class="collection-story__content">
+            <h3 class="collection-story__title">Tender girls</h3>
+            <p class="collection-story__text">Saturday nights to Monday morning vibes we all need those go to clothes that keep us looking fresh in any situation. Our TENDER GIRLS collection for women understands this and has got you to season.</p>
+            <a href="#new-collection" class="button button_outline collection-story__link js-char-wrap">New Collection</a>
+          </div>
+        </article>
+      </section>
+      <!-- Must have -->
+      <section class="section must-have">
+        <h2 class="section__title section__title_sticky must-have__title js-char-wrap">Must Have</h2>
+
+        <div class="must-have__item illustrated-item">
+          <picture class="illustrated-item__image js-parallax parallax" data-parallax-speed="-4">
+            <source media="(min-width: 1200px)"
+                    srcset="images/must-have-1-desktop.webp 1x, images/must-have-1-desktop@2x.webp 2x"
+                    type="image/webp">
+            <source media="(min-width: 1200px)"
+                    srcset="images/must-have-1-desktop.jpg 1x, images/must-have-1-desktop@2x.jpg 2x">
+            <source media="(min-width: 1024px)"
+                    srcset="images/must-have-1-tablet-land.webp 1x, images/must-have-1-tablet-land@2x.webp 2x"
+                    type="image/webp">
+            <source media="(min-width: 1024px)"
+                    srcset="images/must-have-1-tablet-land.jpg 1x, images/must-have-1-tablet-land@2x.jpg 2x">
+            <source media="(min-width: 768px)"
+                    srcset="images/must-have-1-tablet.webp 1x, images/must-have-1-tablet@2x.webp 2x"
+                    type="image/webp">
+            <source media="(min-width: 768px)"
+                    srcset="images/must-have-1-tablet.jpg 1x, images/must-have-1-tablet@2x.jpg 2x">
+            <source media="(min-width: 360x)"
+                    srcset="images/must-have-1-mobile-land.webp 1x, images/must-have-1-mobile-land@2x.webp 2x"
+                    type="image/webp">
+            <source media="(min-width: 360x)"
+                    srcset="images/must-have-1-mobile-land.jpg 1x, images/must-have-1-mobile-land@2x.jpg 2x">
+            <source srcset="images/must-have-1-fablet.webp 1x, images/must-have-1-fablet@2x.webp 2x"
+                    type="image/webp">
+            <source srcset="images/must-have-1-fablet.jpg 1x, images/must-have-1-fablet@2x.jpg 2x">
+            <img src="images/must-have-1-desktop.jpg" alt="Sweet Girl">
+          </picture>
+        </div>
+
+        <div class="must-have__item illustrated-item">
+          <picture class="illustrated-item__image js-parallax parallax" data-parallax-speed="3">
+            <source media="(min-width: 1200px)"
+                    srcset="images/must-have-2-desktop.webp 1x, images/must-have-2-desktop@2x.webp 2x"
+                    type="image/webp">
+            <source media="(min-width: 1200px)"
+                    srcset="images/must-have-2-desktop.jpg 1x, images/must-have-2-desktop@2x.jpg 2x">
+            <source media="(min-width: 1024px)"
+                    srcset="images/must-have-2-tablet-land.webp 1x, images/must-have-2-tablet-land@2x.webp 2x"
+                    type="image/webp">
+            <source media="(min-width: 1024px)"
+                    srcset="images/must-have-2-tablet-land.jpg 1x, images/must-have-2-tablet-land@2x.jpg 2x">
+            <source media="(min-width: 768px)"
+                    srcset="images/must-have-2-tablet.webp 1x, images/must-have-2-tablet@2x.webp 2x"
+                    type="image/webp">
+            <source media="(min-width: 768px)"
+                    srcset="images/must-have-2-tablet.jpg 1x, images/must-have-2-tablet@2x.jpg 2x">
+            <source media="(min-width: 360px)"
+                    srcset="images/must-have-2-mobile-land.webp 1x, images/must-have-2-mobile-land@2x.webp 2x"
+                    type="image/webp">
+            <source media="(min-width: 360px)"
+                    srcset="images/must-have-2-mobile-land.jpg 1x, images/must-have-2-mobile-land@2x.jpg 2x">
+            <source srcset="images/must-have-2-fablet.webp 1x, images/must-have-2-fablet@2x.webp 2x"
+                    type="image/webp">
+            <source srcset="images/must-have-2-fablet.jpg 1x, images/must-have-2-fablet@2x.jpg 2x">
+            <img src="images/must-have-2-desktop.jpg" alt="Sweet Girl">
+          </picture>
+
+          <article class="illustrated-item__content">
+            <h3 class="illustrated-item__title">Be Jeans</h3>
+            <p class="illustrated-item__text">You can’t imagine your life without favourite pair of jeans.</p>
+            <p class="illustrated-item__text">Get a new one. Be cool. Be jeans.</p>
+          </article>
+        </div>
+      </section>
+      <!-- Most wanted -->
+      <section class="section most-wanted">
+        <h2 class="section__title section__title_sticky most-wanted__title js-char-wrap">Most Wanted</h2>
+
+        <div class="most-wanted__item product-teaser">
+          <a href="#product1" class="product-teaser__image-wrapper">
+            <div class="product-teaser__snake-border"></div>
+
+            <picture class="product-teaser__image">
+              <source media="(min-width: 1200px)"
+                      srcset="images/product-1-desktop.webp 1x, images/product-1-desktop@2x.webp 2x"
+                      type="image/webp">
+              <source media="(min-width: 1200px)"
+                      srcset="images/product-1-desktop.png 1x, images/product-1-desktop@2x.png 2x">
+              <source media="(min-width: 1024px)"
+                      srcset="images/product-1-tablet-land.webp 1x, images/product-1-tablet-land@2x.webp 2x"
+                      type="image/webp">
+              <source media="(min-width: 1024px)"
+                      srcset="images/product-1-tablet-land.png 1x, images/product-1-tablet-land@2x.png 2x">
+              <source srcset="images/product-1-desktop.webp 1x, images/product-1-desktop@2x.webp 2x"
+                      type="image/webp">
+              <source srcset="images/product-1-desktop.png 1x, images/product-1-desktop@2x.png 2x">
+              <img src="images/product-1-desktop.png" alt="Zebrabaggy">
+            </picture>
+
+            <picture class="product-teaser__image">
+              <source media="(min-width: 1200px)"
+                      srcset="images/product-1-desktop-hover.webp 1x, images/product-1-desktop-hover@2x.webp 2x"
+                      type="image/webp">
+              <source media="(min-width: 1200px)"
+                      srcset="images/product-1-desktop-hover.png 1x, images/product-1-desktop-hover@2x.png 2x">
+              <source media="(min-width: 1024px)"
+                      srcset="images/product-1-tablet-land-hover.webp 1x, images/product-1-tablet-land-hover@2x.webp 2x"
+                      type="image/webp">
+              <source media="(min-width: 1024px)"
+                      srcset="images/product-1-tablet-land-hover.png 1x, images/product-1-tablet-land-hover@2x.png 2x">
+              <source srcset="images/product-1-desktop-hover.webp 1x, images/product-1-desktop-hover@2x.webp 2x"
+                      type="image/webp">
+              <source srcset="images/product-1-desktop-hover.png 1x, images/product-1-desktop-hover@2x.png 2x">
+              <img src="images/product-1-desktop-hover.png" alt="Zebrabaggy">
+            </picture>
+          </a>
+          <a href="#product1" class="button product-teaser__link js-char-wrap">Zebrabaggy</a>
+        </div>
+
+        <div class="most-wanted__item product-teaser">
+          <a href="#product2" class="product-teaser__image-wrapper">
+            <div class="product-teaser__snake-border"></div>
+
+            <picture class="product-teaser__image">
+              <source media="(min-width: 1200px)"
+                      srcset="images/product-2-desktop.webp 1x, images/product-2-desktop@2x.webp 2x"
+                      type="image/webp">
+              <source media="(min-width: 1200px)"
+                      srcset="images/product-2-desktop.png 1x, images/product-2-desktop@2x.png 2x">
+              <source media="(min-width: 1024px)"
+                      srcset="images/product-2-tablet-land.webp 1x, images/product-2-tablet-land@2x.webp 2x"
+                      type="image/webp">
+              <source media="(min-width: 1024px)"
+                      srcset="images/product-2-tablet-land.png 1x, images/product-2-tablet-land@2x.png 2x">
+              <source srcset="images/product-2-desktop.webp 1x, images/product-2-desktop@2x.webp 2x"
+                      type="image/webp">
+              <source srcset="images/product-2-desktop.png 1x, images/product-2-desktop@2x.png 2x">
+              <img src="images/product-2-desktop.png" alt="Fontshirt">
+            </picture>
+
+            <picture class="product-teaser__image">
+              <source media="(min-width: 1200px)"
+                      srcset="images/product-2-desktop-hover.webp 1x, images/product-2-desktop-hover@2x.webp 2x"
+                      type="image/webp">
+              <source media="(min-width: 1200px)"
+                      srcset="images/product-2-desktop-hover.png 1x, images/product-2-desktop-hover@2x.png 2x">
+              <source media="(min-width: 1024px)"
+                      srcset="images/product-2-tablet-land-hover.webp 1x, images/product-2-tablet-land-hover@2x.webp 2x"
+                      type="image/webp">
+              <source media="(min-width: 1024px)"
+                      srcset="images/product-2-tablet-land-hover.png 1x, images/product-2-tablet-land-hover@2x.png 2x">
+              <source srcset="images/product-2-desktop-hover.webp 1x, images/product-2-desktop-hover@2x.webp 2x"
+                      type="image/webp">
+              <source srcset="images/product-2-desktop-hover.png 1x, images/product-2-desktop-hover@2x.png 2x">
+              <img src="images/product-2-desktop-hover.png" alt="Fontshirt">
+            </picture>
+          </a>
+          <a href="#product2" class="button product-teaser__link js-char-wrap">Fontshirt</a>
+        </div>
+
+        <div class="most-wanted__item product-teaser">
+          <a href="#product3" class="product-teaser__image-wrapper">
+            <div class="product-teaser__snake-border"></div>
+
+            <picture class="product-teaser__image">
+              <source media="(min-width: 1200px)"
+                      srcset="images/product-3-desktop.webp 1x, images/product-3-desktop@2x.webp 2x"
+                      type="image/webp">
+              <source media="(min-width: 1200px)"
+                      srcset="images/product-3-desktop.png 1x, images/product-3-desktop@2x.png 2x">
+              <source media="(min-width: 1024px)"
+                      srcset="images/product-3-tablet-land.webp 1x, images/product-3-tablet-land@2x.webp 2x"
+                      type="image/webp">
+              <source media="(min-width: 1024px)"
+                      srcset="images/product-3-tablet-land.png 1x, images/product-3-tablet-land@2x.png 2x">
+              <source srcset="images/product-3-desktop.webp 1x, images/product-3-desktop@2x.webp 2x"
+                      type="image/webp">
+              <source srcset="images/product-3-desktop.png 1x, images/product-3-desktop@2x.png 2x">
+              <img src="images/product-3-desktop.png" alt="Peachjacket">
+            </picture>
+
+            <picture class="product-teaser__image">
+              <source media="(min-width: 1200px)"
+                      srcset="images/product-3-desktop-hover.webp 1x, images/product-3-desktop-hover@2x.webp 2x"
+                      type="image/webp">
+              <source media="(min-width: 1200px)"
+                      srcset="images/product-3-desktop-hover.png 1x, images/product-3-desktop-hover@2x.png 2x">
+              <source media="(min-width: 1024px)"
+                      srcset="images/product-3-tablet-land-hover.webp 1x, images/product-3-tablet-land-hover@2x.webp 2x"
+                      type="image/webp">
+              <source media="(min-width: 1024px)"
+                      srcset="images/product-3-tablet-land-hover.png 1x, images/product-3-tablet-land-hover@2x.png 2x">
+              <source srcset="images/product-3-desktop-hover.webp 1x, images/product-3-desktop-hover@2x.webp 2x"
+                      type="image/webp">
+              <source srcset="images/product-3-desktop-hover.png 1x, images/product-3-desktop-hover@2x.png 2x">
+              <img src="images/product-3-desktop-hover.png" alt="Peachjacket">
+            </picture>
+          </a>
+          <a href="#product3" class="button product-teaser__link js-char-wrap">Peachjacket</a>
+        </div>
+
+        <div class="most-wanted__item product-teaser">
+          <a href="#product4" class="product-teaser__image-wrapper">
+            <div class="product-teaser__snake-border"></div>
+
+            <picture class="product-teaser__image">
+              <source media="(min-width: 1200px)"
+                      srcset="images/product-4-desktop.webp 1x, images/product-4-desktop@2x.webp 2x"
+                      type="image/webp">
+              <source media="(min-width: 1200px)"
+                      srcset="images/product-4-desktop.png 1x, images/product-4-desktop@2x.png 2x">
+              <source media="(min-width: 1024px)"
+                      srcset="images/product-4-tablet-land.webp 1x, images/product-4-tablet-land@2x.webp 2x"
+                      type="image/webp">
+              <source media="(min-width: 1024px)"
+                      srcset="images/product-4-tablet-land.png 1x, images/product-4-tablet-land@2x.png 2x">
+              <source srcset="images/product-4-desktop.webp 1x, images/product-4-desktop@2x.webp 2x"
+                      type="image/webp">
+              <source srcset="images/product-4-desktop.png 1x, images/product-4-desktop@2x.png 2x">
+              <img src="images/product-4-desktop.png" alt="Ripjeans">
+            </picture>
+
+            <picture class="product-teaser__image">
+              <source media="(min-width: 1200px)"
+                      srcset="images/product-4-desktop-hover.webp 1x, images/product-4-desktop-hover@2x.webp 2x"
+                      type="image/webp">
+              <source media="(min-width: 1200px)"
+                      srcset="images/product-4-desktop-hover.png 1x, images/product-4-desktop-hover@2x.png 2x">
+              <source media="(min-width: 1024px)"
+                      srcset="images/product-4-tablet-land-hover.webp 1x, images/product-4-tablet-land-hover@2x.webp 2x"
+                      type="image/webp">
+              <source media="(min-width: 1024px)"
+                      srcset="images/product-4-tablet-land-hover.png 1x, images/product-4-tablet-land-hover@2x.png 2x">
+               <source srcset="images/product-4-desktop-hover.webp 1x, images/product-4-desktop-hover@2x.webp 2x"
+                      type="image/webp">
+              <source srcset="images/product-4-desktop-hover.png 1x, images/product-4-desktop-hover@2x.png 2x">
+              <img src="images/product-4-desktop-hover.png" alt="Ripjeans">
+            </picture>
+          </a>
+          <a href="#product4" class="button product-teaser__link js-char-wrap">Ripjeans</a>
+        </div>
+      </section>
+      <!-- Sale -->
+      <section class="section sale">
+        <h2 class="section__title section__title_sticky sale__title js-char-wrap">Sale</h2>
+
+        <picture class="sale__background js-parallax parallax" data-parallax-speed="2">
+          <source media="(min-width: 1200px)"
+                  srcset="images/sale-bg-desktop.webp 1x, images/sale-bg-desktop@2x.webp 2x"
+                  type="image/webp">
+          <source media="(min-width: 1200px)"
+                  srcset="images/sale-bg-desktop.jpg 1x, images/sale-bg-desktop@2x.jpg 2x">
+          <source media="(min-width: 1024px)"
+                  srcset="images/sale-bg-tablet-land.webp 1x, images/sale-bg-tablet-land@2x.webp 2x"
+                  type="image/webp">
+          <source media="(min-width: 1024px)"
+                  srcset="images/sale-bg-tablet-land.jpg 1x, images/sale-bg-tablet-land@2x.jpg 2x">
+          <source media="(min-width: 768px)"
+                  srcset="images/sale-bg-tablet.webp 1x, images/sale-bg-tablet@2x.webp 2x"
+                  type="image/webp">
+          <source media="(min-width: 768px)"
+                  srcset="images/sale-bg-tablet.jpg 1x, images/sale-bg-tablet@2x.jpg 2x">
+          <source media="(min-width: 360px)"
+                  srcset="images/sale-bg-mobile-land.webp 1x, images/sale-bg-mobile-land@2x.webp 2x"
+                  type="image/webp">
+          <source media="(min-width: 360px)"
+                  srcset="images/sale-bg-mobile-land.jpg 1x, images/sale-bg-mobile-land@2x.jpg 2x">
+          <source srcset="images/sale-bg-mobile.webp 1x, images/sale-bg-mobile@2x.webp 2x"
+                  type="image/webp">
+          <source srcset="images/sale-bg-mobile.jpg 1x, images/sale-bg-mobile@2x.jpg 2x">
+          <img src="images/sale-bg-desktop.jpg" alt="Sunset">
+        </picture>
+
+        <article class="sale__item product-sale">
+          <a href="#product-sale-1" class="product-sale__image-wrapper">
+            <picture class="product-sale__image">
+              <source media="(min-width: 1200px)"
+                      srcset="images/product-1-sale.webp 1x, images/product-1-sale@2x.webp 2x"
+                      type="image/webp">
+              <source media="(min-width: 1200px)"
+                      srcset="images/product-1-sale.jpg 1x, images/product-1-sale@2x.jpg 2x">
+              <source media="(min-width: 1024px)"
+                      srcset="images/product-1-sale-tablet-land.webp 1x, images/product-1-sale-tablet-land@2x.webp 2x"
+                      type="image/webp">
+              <source media="(min-width: 1024px)"
+                      srcset="images/product-1-sale-tablet-land.jpg 1x, images/product-1-sale-tablet-land@2x.jpg 2x">
+              <source media="(min-width: 768x)"
+                      srcset="images/product-1-sale.webp 1x, images/product-1-sale@2x.webp 2x"
+                      type="image/webp">
+              <source media="(min-width: 768x)"
+                      srcset="images/product-1-sale.jpg 1x, images/product-1-sale@2x.jpg 2x">
+              <source srcset="images/product-1-sale-mobile-land.webp 1x, images/product-1-sale-mobile-land@2x.webp 2x"
+                      type="image/webp">
+              <source srcset="images/product-1-sale-mobile-land.jpg 1x, images/product-1-sale-mobile-land@2x.jpg 2x">
+              <img src="images/product-1-sale.jpg" alt="Sunglass teen">
+            </picture>
+          </a>
+
+          <h4 class="product-sale__price">$680.00</h4>
+          <h3 class="product-sale__title">Beach teen sunglases</h3>
+          <p class="product-sale__description">Collection featuring materials</p>
+          <p class="product-sale__description">Metal & Polycarbonate Frames</p>
+          <a href="#product-sale-1" class="button button_outline product-sale__link js-char-wrap">More</a>
+        </article>
+
+        <article class="sale__item product-sale">
+          <a href="#product-sale-2" class="product-sale__image-wrapper">
+            <picture class="product-sale__image">
+              <source media="(min-width: 1200px)"
+                      srcset="images/product-2-sale.webp 1x, images/product-2-sale@2x.webp 2x"
+                      type="image/webp">
+              <source media="(min-width: 1200px)"
+                      srcset="images/product-2-sale.jpg 1x, images/product-2-sale@2x.jpg 2x">
+              <source media="(min-width: 1024px)"
+                      srcset="images/product-2-sale-tablet-land.webp 1x, images/product-2-sale-tablet-land@2x.webp 2x"
+                      type="image/webp">
+              <source media="(min-width: 1024px)"
+                      srcset="images/product-2-sale-tablet-land.jpg 1x, images/product-2-sale-tablet-land@2x.jpg 2x">
+              <source media="(min-width: 768px)"
+                      srcset="images/product-2-sale.webp 1x, images/product-2-sale@2x.webp 2x"
+                      type="image/webp">
+              <source media="(min-width: 768px)"
+                      srcset="images/product-2-sale.jpg 1x, images/product-2-sale@2x.jpg 2x">
+              <source srcset="images/product-2-sale-mobile-land.webp 1x, images/product-2-sale-mobile-land@2x.webp 2x"
+                      type="image/webp">
+              <source srcset="images/product-2-sale-mobile-land.jpg 1x, images/product-2-sale-mobile-land@2x.jpg 2x">
+              <img src="images/product-2-sale.jpg" alt="Sunglass lux">
+            </picture>
+          </a>
+
+          <h4 class="product-sale__price">$890.00</h4>
+          <h3 class="product-sale__title">Luxberry sunglases</h3>
+          <p class="product-sale__description">Distortion Free 100% UVA/UVB</p>
+          <p class="product-sale__description">Safe Lenses</p>
+          <a href="#product-sale-2" class="button button_outline product-sale__link js-char-wrap">More</a>
+        </article>
+      </section>
+      <!-- News -->
+      <section class="section news">
+        <article class="news__item news-teaser">
+          <a href="#news-1" class="news-teaser__wrap-link">
+            <picture class="news-teaser__image">
+              <source media="(min-width: 1200px)"
+                        srcset="images/news-1.webp 1x, images/news-1@2x.webp 2x"
+                        type="image/webp">
+              <source media="(min-width: 1200px)"
+                        srcset="images/news-1.jpg 1x, images/news-1@2x.jpg 2x">
+              <img src="images/news-1.jpg" alt="Strawberries">
+            </picture>
+
+            <div class="news-teaser__cover"></div>
+
+            <div class="news-teaser__content">
+              <h3 class="news-teaser__title">Woolenart</h3>
+              <p class="news-teaser__text">The muffler is a flexible piece of garment which can be wrapped around your neck.</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="news__item news-teaser">
+          <a href="#news-2" class="news-teaser__wrap-link">
+            <picture class="news-teaser__image">
+              <source media="(min-width: 1200px)"
+                        srcset="images/news-2.webp 1x, images/news-2@2x.webp 2x"
+                        type="image/webp">
+              <source media="(min-width: 1200px)"
+                        srcset="images/news-2.jpg 1x, images/news-2@2x.jpg 2x">
+              <img src="images/news-2.jpg" alt="Cookies">
+            </picture>
+
+            <div class="news-teaser__cover"></div>
+
+            <div class="news-teaser__content">
+              <h3 class="news-teaser__title">Sweetfash</h3>
+              <p class="news-teaser__text">Sweets is the best things in every situation of our life.</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="news__item news-teaser">
+          <a href="#news-3" class="news-teaser__wrap-link">
+            <picture class="news-teaser__image">
+              <source media="(min-width: 1200px)"
+                        srcset="images/news-3.webp 1x, images/news-3@2x.webp 2x"
+                        type="image/webp">
+              <source media="(min-width: 1200px)"
+                        srcset="images/news-3.jpg 1x, images/news-3@2x.jpg 2x">
+              <img src="images/news-3.jpg" alt="Witch">
+            </picture>
+
+            <div class="news-teaser__cover"></div>
+
+            <div class="news-teaser__content">
+              <h3 class="news-teaser__title">Jewelaura</h3>
+              <p class="news-teaser__text">Laura mitchel make new jewellery collection only for soft and young  girls..</p>
+            </div>
+          </a>
+        </article>
+      </section>
     </main>
     <!-- Footer -->
-    <footer role="contentinfo">
+    <footer class="footer container" role="contentinfo">
+      <section class="follow">
+        <h4 class="follow__text">Follow us</h4>
+        <h3 class="follow__hash-tag">#philosophy</h3>
+      </section>
 
+      <section class="social-networks">
+        <a href="https://www.linkedin.com/" class="social-networks__link social-networks__link_linkedin" title="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="438.536" height="438.535" viewBox="0 0 438.536 438.535"><path d="M5.424 145.895H99.64v282.932H5.424zM408.842 171.739c-19.791-21.604-45.967-32.408-78.512-32.408-11.991 0-22.891 1.475-32.695 4.427-9.801 2.95-18.079 7.089-24.838 12.419-6.755 5.33-12.135 10.278-16.129 14.844-3.798 4.337-7.512 9.389-11.136 15.104v-40.232h-93.935l.288 13.706c.193 9.139.288 37.307.288 84.508 0 47.205-.19 108.777-.572 184.722h93.931V270.942c0-9.705 1.041-17.412 3.139-23.127 4-9.712 10.037-17.843 18.131-24.407 8.093-6.572 18.13-9.855 30.125-9.855 16.364 0 28.407 5.662 36.117 16.987 7.707 11.324 11.561 26.98 11.561 46.966V428.82h93.931V266.664c-.007-41.688-9.897-73.328-29.694-94.925zM53.103 9.708c-15.796 0-28.595 4.619-38.4 13.848C4.899 32.787 0 44.441 0 58.529 0 72.42 4.758 84.034 14.275 93.358c9.514 9.325 22.078 13.99 37.685 13.99h.571c15.99 0 28.887-4.661 38.688-13.99 9.801-9.324 14.606-20.934 14.417-34.829-.19-14.087-5.047-25.742-14.561-34.973C81.562 14.323 68.9 9.708 53.103 9.708z"/></svg>
+          </a>
+        <a href="https://www.pinterest.com/" class="social-networks__link social-networks__link_pinterest" title="Pinterest">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 486.392 486.392"><path d="M430.149 135.248C416.865 39.125 321.076-9.818 218.873 1.642 138.071 10.701 57.512 76.03 54.168 169.447c-2.037 57.029 14.136 99.801 68.399 111.84 23.499-41.586-7.569-50.676-12.433-80.802C90.222 77.367 252.16-6.718 336.975 79.313c58.732 59.583 20.033 242.77-74.57 223.71-90.621-18.179 44.383-164.005-27.937-192.611-58.793-23.286-90.013 71.135-62.137 118.072-16.355 80.711-51.557 156.709-37.3 257.909 46.207-33.561 61.802-97.734 74.57-164.704 23.225 14.136 35.659 28.758 65.268 31.038 109.195 8.48 170.267-109.014 155.28-217.479z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/" class="social-networks__link social-networks__link_facebook" title="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" width="96.124" height="96.123" viewBox="0 0 96.124 96.123"><path d="M72.089.02L59.624 0C45.62 0 36.57 9.285 36.57 23.656v10.907H24.037a1.96 1.96 0 0 0-1.96 1.961v15.803a1.96 1.96 0 0 0 1.96 1.96H36.57v39.876a1.96 1.96 0 0 0 1.96 1.96h16.352a1.96 1.96 0 0 0 1.96-1.96V54.287h14.654a1.96 1.96 0 0 0 1.96-1.96l.006-15.803a1.963 1.963 0 0 0-1.961-1.961H56.842v-9.246c0-4.444 1.059-6.7 6.848-6.7l8.397-.003a1.96 1.96 0 0 0 1.959-1.96V1.98A1.96 1.96 0 0 0 72.089.02z"/></svg>
+        </a>
+        <a href="https://twitter.com/" class="social-networks__link social-networks__link_twitter" title="Twitter">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 612"><path d="M612 116.258a250.714 250.714 0 0 1-72.088 19.772c25.929-15.527 45.777-40.155 55.184-69.411-24.322 14.379-51.169 24.82-79.775 30.48-22.907-24.437-55.49-39.658-91.63-39.658-69.334 0-125.551 56.217-125.551 125.513 0 9.828 1.109 19.427 3.251 28.606-104.326-5.24-196.835-55.223-258.75-131.174-10.823 18.51-16.98 40.078-16.98 63.101 0 43.559 22.181 81.993 55.835 104.479a125.556 125.556 0 0 1-56.867-15.756v1.568c0 60.806 43.291 111.554 100.693 123.104-10.517 2.83-21.607 4.398-33.08 4.398-8.107 0-15.947-.803-23.634-2.333 15.985 49.907 62.336 86.199 117.253 87.194-42.947 33.654-97.099 53.655-155.916 53.655-10.134 0-20.116-.612-29.944-1.721 55.567 35.681 121.536 56.485 192.438 56.485 230.948 0 357.188-191.291 357.188-357.188l-.421-16.253c24.666-17.593 46.005-39.697 62.794-64.861z"/></svg>
+        </a>
+      </section>
     </footer>
     <!-- Libraries -->
     <script src="js/vendor/picturefill.min.js" async></script>
+    <script src="js/vendor/audero-sticky.min.js"></script>
     <!-- Scripts -->
     <script src="js/main.min.js"></script>
+
   </body>
 </html>

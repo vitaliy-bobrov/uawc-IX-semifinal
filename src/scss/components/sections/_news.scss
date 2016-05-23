@@ -1,0 +1,24 @@
+.news {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 24px 20px;
+
+  @include bp(tablet-land) {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding: 52px 22px;
+  }
+
+  @include bp(desktop) {
+    padding: 48px 20px;
+  }
+
+  &__item {
+    flex-basis: 300px;
+
+    @include bp(tablet-land) {
+      flex: 1 1 0;
+    }
+  }
+}

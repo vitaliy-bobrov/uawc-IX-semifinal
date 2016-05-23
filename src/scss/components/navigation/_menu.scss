@@ -1,0 +1,181 @@
+.menu {
+  padding: 58px 6px 26px;
+  position: absolute;
+  top: $tablet-menu-pos-top;
+  left: $tablet-menu-pos-left;
+  z-index: $under-content;
+  transition: z-index 0s linear .5s;
+  overflow: hidden;
+
+  @include bp(mobile-land) {
+    padding: 60px 20px 24px;
+  }
+
+  @include bp(tablet) {
+    padding: 80px 30px 40px;
+  }
+
+  @include bp(tablet-land) {
+    padding: 104px 57px 80px 42px;
+    top: $desktop-menu-pos-top;
+    left: $desktop-menu-pos-left;
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    opacity: 0;
+  }
+
+  &:before {
+    width: 48px;
+    height: 48px;
+    top: 50px;
+    left: 50px;
+    z-index: $under-content;
+    background-color: $sand;
+    border-radius: 50%;
+    transition: opacity .1s ease .4s, transform .45s cubic-bezier(.4, 0, 1, 1);
+  }
+
+  @include bp(tablet-land) {
+    &:after {
+      width: 1px;
+      height: 1px;
+      top: 25px;
+      left: 63px;
+      z-index: $above-content;
+      background-color: $boulder;
+      transform-origin: 0 0;
+      transition: opacity .1s ease .4s, transform .45s cubic-bezier(.4, 0, 1, 1);
+    }
+  }
+
+  &_active {
+    z-index: $menu;
+    transition: z-index 0s linear;
+
+    &:before,
+    &:after {
+      opacity: 1;
+    }
+
+    &:before {
+      transform: scale(22);
+      transition: opacity .1s ease, transform .45s cubic-bezier(.4, 0, 1, 1) .05s;
+
+      @include bp(tablet-land) {
+        transform: scale(31);
+      }
+    }
+
+    @include bp(tablet-land) {
+      &:after {
+        transform: scaleX(800);
+        transition: opacity .1s ease .5s, transform .45s cubic-bezier(.4, 0, 1, 1) .5s;
+      }
+    }
+
+    .menu__item {
+      opacity: 1;
+      transform: translate(0, 0);
+      transition: all .3s cubic-bezier(.4, 0, 1, 1) .45s;
+      @include animation-sequense(8, .15s, .45s, 'transition');
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0;
+    transform: translate(-30px, 50px);
+    transition: all .1s cubic-bezier(.4, 0, 1, 1);
+
+    @include bp(tablet-land) {
+      transform: translate(-40px, 80px);
+    }
+
+    @for $i from 1 through 8 {
+      &:nth-of-type(#{$i}) {
+        background-image: resolve('menu-#{$i}-bg.jpg');
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: 0 12px;
+    font-size: 20px;
+    line-height: 26px;
+    letter-spacing: 4.3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $boulder;
+    position: relative;
+    overflow: hidden;
+
+    @include bp(mobile-land) {
+      padding: 0 20px;
+      font-size: 24px;
+      line-height: 36px;
+    }
+
+    @include bp(tablet-land) {
+      font-size: 30px;
+      line-height: 65px;
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 50%;
+      background-color: $sand;
+      box-shadow: 0 0 1px 0 $sand;
+      position: absolute;
+      left: 0;
+      z-index: $content;
+
+      @include bp(tablet-land) {
+        box-shadow: none;
+      }
+    }
+
+    &:before {
+      top: 0;
+    }
+
+    &:after {
+      bottom: 0;
+    }
+
+    &:hover,
+    &:focus {
+      text-shadow: 0 0 1px $white;
+      color: $white;
+
+      &:before {
+        transform: translateY(-100%);
+      }
+
+      &:after {
+        transform: translateY(100%);
+      }
+    }
+  }
+
+  &__text-wrap {
+    position: relative;
+    z-index: $above-content;
+  }
+}

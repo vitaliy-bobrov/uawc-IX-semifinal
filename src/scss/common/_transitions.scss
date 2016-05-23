@@ -1,14 +1,15 @@
 a {
-  transition: all .45s linear;
+  transition: all .3s cubic-bezier(.4, 0, 1, 1);
 
   &:before,
-  &:after {
-    transition: all .45s linear;
+  &:after,
+  > svg {
+    transition: all .3s cubic-bezier(.4, 0, 1, 1);
   }
 }
 
 input,
 button,
 textarea {
-  transition: all .45s linear;
+  transition: all .3s cubic-bezier(.4, 0, 1, 1);
 }

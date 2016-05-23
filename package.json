@@ -32,8 +32,7 @@
     "gulp-webpcss": "^1.1.1",
     "postcss-assets": "^4.0.1",
     "postcss-flexbugs-fixes": "^2.0.0",
-    "postcss-mq-keyframes": "^0.2.5",
-    "postcss-will-change": "^1.1.0"
+    "postcss-mq-keyframes": "^0.2.5"
   },
   "eslintConfig": {
     "extends": "google",

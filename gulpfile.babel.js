@@ -7,7 +7,6 @@ import assets from 'postcss-assets';
 import autoprefixer from 'autoprefixer';
 import mqpacker from 'css-mqpacker';
 import mqkeyframes from 'postcss-mq-keyframes';
-import willChange from 'postcss-will-change';
 import flexbug from 'postcss-flexbugs-fixes';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import pkg from './package.json';
@@ -82,7 +81,6 @@ const styles = () => {
       cachebuster: true
     }),
     flexbug,
-    willChange,
     autoprefixer({cascade: false}),
     mqpacker({sort: true}),
     mqkeyframes
@@ -121,7 +119,7 @@ const lint = () => gulp.src(config.scripts.src)
 gulp.task('lint', lint);
 
 // Concatenate and minify JavaScript and transpiles ES2015 code to ES5.
-const scripts = () => gulp.src(config.scripts.src)
+const scripts = () => gulp.src([config.scripts.src, `!${config.scripts.preloader}`])
   .pipe($.newer('.tmp/js'))
   .pipe($.plumber({
     errorHandler: onError
@@ -137,6 +135,24 @@ const scripts = () => gulp.src(config.scripts.src)
   .pipe(gulp.dest(config.scripts.dist));
 
 gulp.task('scripts', scripts);
+
+// Compile preloader.
+const preloader = () => gulp.src(config.scripts.preloader)
+  .pipe($.newer('.tmp/js'))
+  .pipe($.plumber({
+    errorHandler: onError
+  }))
+  .pipe($.sourcemaps.init())
+  .pipe($.babel())
+  .pipe($.sourcemaps.write())
+  .pipe($.concat('preloader.min.js'))
+  .pipe(gulp.dest('.tmp/js'))
+  .pipe($.uglify({preserveComments: 'some'}))
+  .pipe($.size({title: 'preloader'}))
+  .pipe($.sourcemaps.write('.'))
+  .pipe(gulp.dest(config.scripts.dist));
+
+gulp.task('preloader', preloader);
 
 // Scan your HTML for assets & optimize them
 const html = () => gulp.src(config.html.src)
@@ -226,7 +242,7 @@ gulp.task('serve', gulp.series(
 // Build production files
 gulp.task('build', gulp.series(
     'clean',
-    gulp.parallel('libraries', 'fonts', 'html', 'styles', 'lint', 'scripts', 'icons', 'images', 'copy')
+    gulp.parallel('libraries', 'fonts', 'html', 'styles', 'lint', 'scripts', 'preloader', 'icons', 'images', 'copy')
   )
 );
 

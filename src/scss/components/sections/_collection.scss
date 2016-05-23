@@ -1,0 +1,19 @@
+.collection {
+  padding: 50px 24px;
+  @extend %picture-inside;
+
+  @include bp(tablet-land) {
+    padding: 50px 0 50px 15.58%;
+  }
+
+  &__title {
+    margin: 0 0 -24px;
+    color: $light-gray;
+
+    @include bp(tablet-land) {
+      margin-bottom: 0;
+      top: 143px;
+      left: 3.66%;
+    }
+  }
+}

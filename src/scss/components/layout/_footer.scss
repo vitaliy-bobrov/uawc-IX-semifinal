@@ -1,0 +1,11 @@
+.footer {
+  padding: 0 0 32px;
+
+  @include bp(tablet) {
+    padding: 0 0 44px;
+  }
+
+  @include bp(desktop) {
+    padding: 23px 0 50px;
+  }
+}

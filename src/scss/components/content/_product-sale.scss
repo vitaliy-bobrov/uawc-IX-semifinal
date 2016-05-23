@@ -1,0 +1,122 @@
+.product-sale {
+  padding: 20px 12px;
+  border: 2px solid $mine;
+  color: $semi-black;
+  position: relative;
+
+  @include bp(tablet) {
+    padding: 24px 15px;
+  }
+
+  @include bp(desktop) {
+    padding-bottom: 34px;
+  }
+
+  @include bp(desktop) {
+    &:hover {
+      .product-sale__title,
+      .product-sale__description {
+        opacity: 0;
+      }
+
+      .product-sale__link {
+        opacity: 1;
+        z-index: $above-content;
+        transition: z-index 0s linear, opacity .25s ease-in .2s, background-color .3s linear;
+      }
+    }
+  }
+
+
+  &__image-wrapper {
+    display: block;
+    margin: 0 -40px;
+
+    @include bp(tablet) {
+      margin: 0 -55px;
+    }
+
+    @include bp(desktop) {
+      margin: 0 -97px;
+    }
+
+    &:hover,
+    &:focus {
+      filter: sepia(.7) saturate(1.2);
+    }
+  }
+
+  &__price {
+    margin: -44px -15px 0;
+    font-size: 38px;
+    line-height: 32px;
+    font-weight: 600;
+    text-align: right;
+    color: $white;
+    position: relative;
+    z-index: $above-content;
+
+    @include bp(tablet) {
+      margin: -65px -15px 25px;
+      font-size: 48px;
+      line-height: 40px;
+    }
+  }
+
+  &__title,
+  &__description {
+    @include bp(desktop) {
+      transition: opacity .25s ease-out;
+    }
+  }
+
+  &__title {
+    margin: 36px 0 16px;
+    font-family: $open-sans;
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: 300;
+    letter-spacing: normal;
+    text-transform: uppercase;
+
+    @include bp(mobile-land) {
+      font-size: 20px;
+      line-height: 18px;
+    }
+
+    @include bp(tablet) {
+      margin-top: 52px;
+      font-size: 22px;
+    }
+
+    @include bp(desktop) {
+      margin-top: 67px;
+    }
+  }
+
+  &__description {
+    margin: 0;
+  }
+
+  &__link {
+    margin-top: 24px;
+    color: $gumbo;
+    border-color: $gumbo;
+
+    @include bp(desktop) {
+      margin-top: 0;
+      position: absolute;
+      left: 35px;
+      right: 35px;
+      z-index: $under-content;
+      bottom: 46px;
+      opacity: 0;
+      transition: z-index 0s linear, opacity .25s ease-in, background-color .3s linear;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $sand;
+    }
+  }
+}

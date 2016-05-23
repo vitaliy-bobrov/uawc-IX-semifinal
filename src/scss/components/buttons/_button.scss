@@ -1,0 +1,51 @@
+.button {
+  display: block;
+  font-size: 16px;
+  line-height: 44px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  overflow: hidden;
+
+  @include bp(fablet) {
+    font-size: 18px;
+    line-height: 48px;
+  }
+
+  @include bp(tablet-land) {
+    line-height: 60px;
+  }
+
+  &:hover {
+    > span:nth-child(odd) {
+      animation: button-odd .5s forwards;
+    }
+
+    > span:nth-child(even) {
+      animation: button-even .5s forwards;
+    }
+
+    > span:nth-child(odd),
+    > span:nth-child(even) {
+      animation-timing-function: cubic-bezier(.75, 0, .125, 1);
+    }
+
+    > span {
+      @include animation-sequense(15, .05s, 0s);
+    }
+  }
+
+  > span {
+    display: inline-block;
+    vertical-align: top;
+
+    &:empty {
+      min-width: 6px;
+    }
+  }
+
+  &_outline {
+    border-width: 2px;
+    border-style: solid;
+  }
+}

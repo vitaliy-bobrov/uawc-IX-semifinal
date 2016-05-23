@@ -1,0 +1,74 @@
+.menu-toggle {
+  display: block;
+  width: 62px;
+  height: 48px;
+  border: 1px solid $sand;
+  position: absolute;
+  top: $tablet-menu-pos-top + 1;
+  left: $tablet-menu-pos-left + 1;
+  z-index: $menu-toggle;
+
+  @include bp(tablet-land) {
+    top: $desktop-menu-pos-top + 1;
+    left: $desktop-menu-pos-left + 2;
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 30px;
+    position: absolute;
+    top: 9px;
+    right: -1px;
+    background-color: $sand;
+  }
+
+  &_active {
+    border-color: $boulder;
+
+    &:before {
+      width: 2px;
+    }
+
+    .menu-toggle__line {
+      width: 25px;
+      height: 1px;
+
+      &:nth-of-type(1) {
+        transform: rotate(28deg) translateX(9px);
+      }
+
+      &:nth-of-type(2) {
+        transform: rotate(90deg) translateY(3px);
+      }
+
+      &:nth-of-type(3) {
+        transform: rotate(-28deg) translateX(9px);
+      }
+    }
+  }
+
+  &__line {
+    display: block;
+    width: 40px;
+    height: 2px;
+    position: absolute;
+    left: calc(50% - 20px);
+    background-color: $boulder;
+    transition: all .2s ease;
+    will-change: transform;
+
+    &:nth-of-type(1) {
+      top: 13px;
+    }
+
+    &:nth-of-type(2) {
+      top: 23px;
+    }
+
+    &:nth-of-type(3) {
+      top: 33px;
+    }
+  }
+}

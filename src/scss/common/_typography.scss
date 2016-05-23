@@ -1,1 +1,39 @@
+::selection {
+  color: $white;
+  background-color: $boulder;
+}
 
+h2 {
+  &:empty {
+    height: auto !important;
+  }
+}
+
+h3 {
+  font-family: $farray;
+  font-size: 24px;
+  line-height: 22px;
+  font-weight: 400;
+  letter-spacing: 1px;
+
+  @include bp(mobile-land) {
+    font-size: 32px;
+    line-height: 28px;
+  }
+
+  @include bp(tablet) {
+    font-size: 36px;
+    line-height: 32px;
+    letter-spacing: 2px;
+  }
+}
+
+p {
+  font-size: 16px;
+  line-height: 20px;
+
+  @include bp(tablet) {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}

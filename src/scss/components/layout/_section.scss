@@ -1,0 +1,53 @@
+.section {
+  position: relative;
+
+  &__title {
+    margin: 0 0 24px;
+    font-size: 24px;
+    line-height: 22px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+
+    @include bp(fablet) {
+      font-size: 32px;
+      line-height: 28px;
+    }
+
+    @include bp(tablet) {
+      font-size: 36px;
+      line-height: 24px;
+    }
+
+    @include bp(tablet-land) {
+      max-width: 58px;
+      margin-bottom: 0;
+      font-size: 30px;
+      line-height: 40px;
+      word-wrap: break-word;
+      position: absolute;
+      z-index: $above-content;
+    }
+
+    &_sticky {
+      position: sticky;
+    }
+
+    span {
+      @include bp(tablet-land) {
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+      }
+
+      &:empty {
+        padding-left: 12px;
+
+        @include bp(tablet-land) {
+          display: none;
+          padding-left: 0;
+        }
+      }
+    }
+  }
+}

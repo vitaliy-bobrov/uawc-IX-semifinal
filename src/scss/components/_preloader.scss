@@ -1,0 +1,96 @@
+.preloader {
+  position: relative;
+
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    z-index: $under-content;
+    background-color: $sand;
+    border-radius: 50%;
+    opacity: 0;
+    transition: transform .8s ease, z-index 0s linear .8s, opacity .2s ease .6s;
+
+    @include bp(tablet) {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  &:before {
+    top: 5%;
+    left: 5%;
+
+    @include bp(tablet) {
+      top: 10%;
+      left: 10%;
+    }
+  }
+
+  &:after {
+    bottom: 5%;
+    right: 5%;
+
+    @include bp(tablet) {
+      bottom: 10%;
+      right: 10%;
+    }
+  }
+
+  &_active {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+    &:before,
+    &:after {
+      z-index: $preloader;
+      opacity: 1;
+      transform: scale(40);
+      transition: transform .8s ease-out, z-index 0s linear, opacity .2s ease;
+
+      @include bp(tablet) {
+        transform: scale(50);
+      }
+    }
+
+    .preloader__spinner {
+      z-index: $spinner;
+    }
+
+    .preloader__ball {
+      animation-name: spin-balls;
+    }
+  }
+
+  &__spinner {
+    width: 180px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: $under-content;
+  }
+
+  &__ball {
+    display: inline-block;
+    float: left;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 10px;
+    background-color: $boulder;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+
+    @for $i from 1 through 9 {
+      &:nth-child(#{$i}) {
+        animation-delay: ((random(100) / 100) - .2) + s;
+        animation-duration: ((random(100) / 100) + .6) + s;
+      }
+    }
+  }
+}

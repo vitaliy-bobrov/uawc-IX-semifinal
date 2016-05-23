@@ -1,0 +1,77 @@
+.social-networks {
+  display: flex;
+  justify-content: center;
+
+  &__link {
+    display: block;
+    width: 42px;
+    height: 42px;
+    text-indent: -9999px;
+    border-radius: 50%;
+    border: 1px solid $boulder;
+    background-color: $white;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+
+      @include bp(tablet) {
+        margin-right: 2%;
+      }
+
+      @include bp(desktop) {
+        margin-right: 11px;
+      }
+    }
+
+    &:not(.social-networks__link_linkedin) {
+      padding: 6px;
+    }
+
+    &_linkedin {
+      padding: 8px;
+
+      &:hover,
+      &:focus {
+        border-color: $linkedin;
+        background-color: $linkedin;
+      }
+    }
+
+    &_pinterest {
+      &:hover,
+      &:focus {
+        border-color: $pinterest;
+        background-color: $pinterest;
+      }
+    }
+
+    &_facebook {
+      &:hover,
+      &:focus {
+        border-color: $facebook;
+        background-color: $facebook;
+      }
+    }
+
+    &_twitter {
+      &:hover,
+      &:focus {
+        border-color: $twitter;
+        background-color: $twitter;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      > svg {
+        fill: $white;
+      }
+    }
+
+    > svg {
+      display: block;
+      max-height: 100%;
+      fill: $gumbo;
+    }
+  }
+}

@@ -5,10 +5,11 @@ body {
 }
 
 body {
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 400;
-  color: $black;
+  font-family: $open-sans;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 300;
+  color: $boulder;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: rgba($white, .05);

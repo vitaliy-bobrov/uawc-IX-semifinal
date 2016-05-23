@@ -1,0 +1,194 @@
+.news-teaser {
+  position: relative;
+  margin-bottom: 24px;
+
+  @include bp(tablet-land) {
+    margin-bottom: 0;
+  }
+
+  &:not(:last-of-type) {
+    @include bp(tablet) {
+      margin-right: 20px;
+    }
+
+    @include bp(tablet-land) {
+      margin-right: 22px;
+    }
+
+    @include bp(desktop) {
+      margin-right: 18px;
+    }
+  }
+
+  @for $i from 1 through 3 {
+    &:nth-of-type(#{$i}) {
+      .news-teaser__cover {
+        background-image: resolve('news-#{$i}.jpg');
+      }
+    }
+  }
+
+  &__wrap-link {
+    display: block;
+    text-decoration: none;
+    @extend %picture-inside;
+
+    &:hover,
+    &:focus {
+
+      .news-teaser__cover {
+        filter: blur(8px);
+      }
+
+      @include bp(desktop) {
+        &:after {
+          opacity: 1;
+          transform: translateX(0);
+        }
+
+        .news-teaser__cover,
+        .news-teaser__content {
+          opacity: 1;
+        }
+
+        .news-teaser__title,
+        .news-teaser__text {
+          opacity: 1;
+          transform: translate(0, 0);
+        }
+
+        .news-teaser__title {
+          transition: all .3s cubic-bezier(.4, 0, 1, 1) .15s;
+        }
+
+        .news-teaser__text {
+          transition: all .3s cubic-bezier(.4, 0, 1, 1) .3s;
+        }
+      }
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      width: 15px;
+      height: 15px;
+      background: resolve('news-arrow.svg') no-repeat 0 0;
+      position: absolute;
+      top: calc(17% + 8px);
+      left: 20px;
+
+      @include bp(desktop) {
+        top: 46px;
+        left: 51px;
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+    }
+  }
+
+  &__cover,
+  &__content {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+
+    @include bp(desktop) {
+      top: 18px;
+      left: 51px;
+      right: 51px;
+      bottom: 19px;
+      opacity: 0;
+      transition: opacity .2s ease;
+    }
+  }
+
+  &__cover {
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all .4s linear;
+
+    @include bp(desktop) {
+      filter: blur(8px);
+      transition: none;
+    }
+  }
+
+  &__content {
+    padding: 20px 24px;
+    background-color: rgba($white, .25);
+    border-top: 2px solid $white;
+    border-right: 2px solid $white;
+    border-bottom: 2px solid $white;
+
+    @include bp(desktop) {
+      padding: 19px 40px;
+      background-color: rgba($white, .4);
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      width: 2px;
+      background-color: $white;
+      position: absolute;
+      left: 0;
+    }
+
+    &:before {
+      height: 10%;
+      top: -2px;
+
+      @include bp(desktop) {
+        height: 24px;
+      }
+    }
+
+    &:after {
+      height: 75%;
+      bottom: -2px;
+
+      @include bp(desktop) {
+        height: 202px;
+      }
+    }
+  }
+
+  &__title,
+  &__text {
+    @include bp(desktop) {
+      opacity: 0;
+      transform: translate(-30px, 60px);
+      transition: all .2s cubic-bezier(.4, 0, 1, 1);
+      will-change: transform;
+    }
+  }
+
+  &__title {
+    margin: 0 0 16px;
+    font-size: 24px;
+    line-height: 22px;
+    text-align: center;
+    color: $white;
+    text-shadow: 0 0 3px rgba($black, .3);
+
+    @include bp(tablet) {
+      margin-bottom: 15px;
+      font-size: 30px;
+      line-height: 28px;
+    }
+
+    @include bp(desktop) {
+      text-align: left;
+      text-shadow: none;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    font-weight: 400;
+    color: $tine;
+  }
+}

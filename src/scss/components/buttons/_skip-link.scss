@@ -1,0 +1,27 @@
+.skip-link {
+  text-indent: -9999px;
+  display: block;
+  border-top: 18px solid $boulder;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  position: absolute;
+  bottom: -20px;
+  left: 58px;
+  animation: skip-link .8s infinite linear alternate;
+
+  @include bp(tablet) {
+    border-top-width: 24px;
+    border-left-width: 18px;
+    border-right-width: 18px;
+    left: calc(4.5% + 27px);
+  }
+
+  @include bp(desktop) {
+    bottom: -50px;
+  }
+
+  &:hover,
+  &:focus {
+    animation-play-state: paused;
+  }
+}

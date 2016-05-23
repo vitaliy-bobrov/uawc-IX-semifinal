@@ -5,6 +5,7 @@
     "normalize-scss": "^3.0.3"
   },
   "dependencies": {
-    "picturefill": "^3.0.2"
+    "picturefill": "^3.0.2",
+    "audero-sticky": "^0.3.0"
   }
 }

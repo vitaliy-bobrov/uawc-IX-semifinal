@@ -1,0 +1,38 @@
+.follow {
+  display: block;
+  margin-bottom: 24px;
+  text-align: center;
+  text-decoration: none;
+  color: $follow;
+
+  @include bp(tablet) {
+    margin-bottom: 27px;
+  }
+
+  &__text {
+    margin: 0 0 16px;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 300;
+    text-transform: uppercase;
+
+    @include bp(tablet) {
+      margin-bottom: 20px;
+      font-size: 24px;
+      line-height: 24px;
+    }
+  }
+
+  &__hash-tag {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+    font-size: 26px;
+    line-height: 24px;
+
+    @include bp(tablet) {
+      font-size: 30px;
+      line-height: 28px;
+    }
+  }
+}

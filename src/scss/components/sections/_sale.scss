@@ -1,0 +1,68 @@
+.sale {
+  padding: 24px 12%;
+  overflow: hidden;
+  @extend %picture-inside;
+
+  @include bp(fablet) {
+    padding: 24px 18%;
+  }
+
+  @include bp(tablet) {
+    padding: 24px 28%;
+  }
+
+  @include bp(tablet-land) {
+    padding: 44px 12%;
+  }
+
+  @include bp(desktop) {
+    padding: 36px 16.33% 37px;
+  }
+
+  &__title {
+    top: 34px;
+    right: 20px;
+    color: $light-gray;
+
+    @include bp(tablet-land) {
+      color: $white;
+    }
+
+    @include bp(desktop) {
+      top: 59px;
+      right: 48px;
+    }
+  }
+
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: $under-content;
+  }
+
+  &__item {
+    margin-bottom: 30px;
+
+    @include bp(tablet-land) {
+      display: inline-block;
+      vertical-align: top;
+      width: 40%;
+      margin-bottom: 0;
+    }
+
+    @include bp(desktop) {
+      width: 35.64%;
+    }
+
+    &:not(:nth-of-type(2n)) {
+      @include bp(tablet-land) {
+        margin-right: 20%;
+      }
+
+      @include bp(desktop) {
+        margin-right: 28.72%;
+      }
+    }
+  }
+}

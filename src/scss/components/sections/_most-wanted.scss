@@ -1,0 +1,51 @@
+.most-wanted {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 50px 24px;
+  background-color: $alabaster;
+
+  @include bp(tablet) {
+    justify-content: space-between;
+  }
+
+  @include bp(tablet-land) {
+    flex-wrap: nowrap;
+    padding: 51px 50px 55px 94px;
+  }
+
+  @include bp(desktop) {
+    padding-left: 114px;
+    padding-right: 117px;
+  }
+
+  &__title {
+    flex-basis: 100%;
+    top: 45px;
+    left: 2%;
+    color: $pale-slate;
+
+    @include bp(tablet-land) {
+      flex-basis: auto;
+    }
+
+    @include bp(desktop) {
+      top: 94px;
+      left: 3.416%; // 41px / 1200px
+    }
+  }
+
+  &__item {
+    margin-bottom: 30px;
+    flex-basis: 222px;
+
+    @include bp(tablet-land) {
+      margin-bottom: 0;
+      flex-basis: 22%;
+    }
+
+    @include bp(desktop) {
+      flex-basis: 222px;
+    }
+  }
+}
