@@ -39,7 +39,7 @@
      * @return {Boolean} can be effect enabled on device.
      */
     static checkDevice() {
-      return typeof window.orientation === 'undefined' && innerWidth < 1200;
+      return typeof window.orientation === 'undefined' && innerWidth > 1200;
     }
 
     /**
